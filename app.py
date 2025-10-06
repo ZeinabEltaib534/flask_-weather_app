@@ -11,7 +11,7 @@ from weather_model import (
 )
 
 app = Flask(__name__)
-CORS(app,CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/predict": {"origins": "https://rowenasayed.github.io"}})
 
 # Load pickled model
 with open("weather_model.pkl", "rb") as f:
@@ -79,6 +79,7 @@ def predict():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
+
 
 
 
